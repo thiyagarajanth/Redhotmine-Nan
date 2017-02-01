@@ -1,0 +1,7 @@
+# English strings go here for Rails i18n
+en:
+  # my_label: "My label"
+  label_sla: 'SLA'
+  label_request_validity: 'Request Validity'
+  label_user_rating: 'User Rating'
+

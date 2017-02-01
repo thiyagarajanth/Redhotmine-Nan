@@ -1,0 +1,19 @@
+production:
+  adapter: mysql2
+  database: nanba
+  host: localhost
+  username: root
+  password: root
+  port: 3306
+  encoding: utf8
+
+development:
+  adapter: mysql2
+  database: nanba_qc
+  host: 192.168.8.238
+  username: root
+  password: root
+  port: 3306
+  encoding: utf8
+
+

@@ -1,0 +1,109 @@
+<%= stylesheet_link_tag 'default_assignee', :plugin => "redmine_default_assignee" %>
+<% if @default_assignee.present? && @default_assignee.errors.any? %>
+    <div id="errorExplanation">
+     <ul>
+        <% @default_assignee.errors.each_with_index do |msg, i| %>
+            <li><%= msg[1] %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+
+
+<div style='width:100%;float:left'>
+  <div style='width:50%;float:left'><h2 style="float:left">Set Default Assignee</h2></div>
+</div>
+<div class="assignee_master">
+
+<%= form_tag(project_default_assignee_setup_index_path(@project.id), {:method => :post,:multipart => true, :id => 'assign_form'}) do %>
+    <%= hidden_field_tag 'project_id', @project.id %>
+    <%= label_tag 'Tracker '%>
+    <%= select_tag "tracker_id", options_from_collection_for_select(@project.trackers, "id", "name", params[:tracker_id]), :prompt => '--- Please Select ---' %>
+
+        <%= label_tag 'Assignee'%>
+      <% user = params[:assigneed_to_id].present? ? Principal.find(params[:assigneed_to_id]) : nil%>
+      <% attr = user.present? ? "#{user.id}, #{user.name}" : ''%>
+    <%= select_tag :assigneed_to_id,nil, {id: 'user_assign_id', "data-ids"=>attr} %>
+    <%#= select_tag "assigneed_to_id",options_from_collection_for_select(@project.assignable_users, "id", "name", params[:assigneed_to_id]), :prompt => '--- Please Select ---'%>
+
+    <%= submit_tag l(:button_submit),:class=>"assign_submit" %>
+  <% end %>
+
+        <div >
+          <div id="assign_list" >
+            <h3>List</h3>
+            <table class="list" style="width: 50%">
+              <tr>
+                <th><%= l(:lable_field_tracker) %></th>
+                <th><%= l(:lable_field_default_assignee) %></th>
+                <th>Action</th>
+              </tr>
+              <% %>
+              <% @default_assignees.each do |default_assignee| -%>
+                  <tr class="<%= cycle('odd', 'even') %>">
+                    <td>
+                      <%= default_assignee.tracker.name %>
+                    </td>
+                    <td>
+                <%principal = default_assignee.assigned_princepal%>
+                <% if principal.present? && principal.firstname.present? %>
+                <%= principal.firstname  %>
+                <% elsif principal.present? && principal.lastname.present? %>
+                <%= principal.lastname
+                %>
+                <%end%>
+                    </td>
+                    <td >
+                      <%= link_to image_tag('edit.png'), edit_project_default_assignee_setup_path(@project, default_assignee.id),  :title => l(:button_edit) %>
+                      <%= link_to(image_tag('delete.png'), project_default_assignee_setup_path(@project, default_assignee.id), :data => {:confirm => l(:text_are_you_sure)}, :method => :delete, :title => 'Delete')  %>
+                    </td>
+                  </tr>
+              <% end %>
+            </table>
+
+          </div>
+        </div>
+      </div>
+
+
+<%= javascript_tag defer: 'defer' do -%>
+    $(document).ready(function(){
+      res =  $('#user_assign_id').attr('data-ids').split(',')
+        if (res.length > 1){
+            $('#user_assign_id').append($('<option>', {value: res[0], text: res[1] }));
+              $.ajax({
+              type: "get",
+              url: '/projects/' + window.location.href.split('/')[4] + '/default_assignee_setup/',
+              dataType: 'json',
+              type: "GET",
+              success: function(data) {
+              var $el = $("#user_assign_id");
+                $.each(data.result, function(key,val) {
+                $el.append($("<option></option>").attr("value", val[0]).text(val[1]));
+                });
+                }
+                });
+        }
+
+        $(document).on("change", '#tracker_id', function(e) {
+
+            var department = $(this).val();
+            $.ajax({
+              type: "get",
+              url: '/projects/' + window.location.href.split('/')[4] + '/default_assignee_setup/',
+              dataType: 'json',
+              type: "GET",
+              success: function(data) {
+                var $el = $("#user_assign_id");
+                $el.empty(); // remove old options
+                $el.append($("<option></option>").attr("value", '').text('Please Select'));
+                $.each(data.result, function(key,val) {
+                 $el.append($("<option></option>").attr("value", val[0]).text(val[1]));
+                });
+              }
+            });
+        });
+
+    });
+
+<% end -%>

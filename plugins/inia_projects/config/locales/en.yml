@@ -1,0 +1,7 @@
+# English strings go here for Rails i18n
+en:
+  # my_label: "My label"
+  field_ticketing_role: "Approval System"
+  label_projects: 'Projects'
+  label_config: 'Configuration'
+  label_lack_workflow: 'AWMP'

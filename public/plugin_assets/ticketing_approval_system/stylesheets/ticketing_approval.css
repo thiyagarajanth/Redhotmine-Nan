@@ -1,0 +1,145 @@
+.tk_ap_form form{
+    float: left;
+    background-color: silver;
+    width:98%; padding : 1%;
+
+}
+.approval_level{
+    background-color: #F5720B;
+}
+#tab-content-ticketing_approval_system .nodata{
+    float: left;
+    width: 100%;
+}
+.approval_role {
+    border: 1px solid;
+    padding: 15px;
+    margin: 5px;
+    width: 50%;
+    float: left;
+}
+#role_div {
+    float: right;
+    border: 1px solid;
+    padding: 3px;
+    background-color: skyblue;
+    font-weight: bold;
+    cursor: pointer;
+}
+#hide_role_div{
+    float: right;
+    border: 1px solid;
+    padding: 3px;
+    background-color: skyblue;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#approval_list{
+    width: 100%;
+}
+
+table#tk_app_list {
+    /*width: 65%;*/
+    float: left;
+    padding: 1%;
+    margin:0 auto;
+    font-size: 14px;
+    width:100%;
+    /*background-color: silver;*/
+}
+table#tk_app_list th {
+    font-weight: bold;
+    background-color: silver;
+}
+table#tk_app_list .level {
+    width:4%;
+    text-align: center;
+}
+table#tk_app_list .level input {
+    height: 18px;
+    width:18px;
+}
+table#tk_app_list .tk_app_val {
+    width:10%
+}
+table#tk_app_list .tk_app_cat {
+    width:7%
+}
+#tk_app_cat #category_approval_configs_project_category_id,#tk_app_cat a, #add_values, .tk_app_val div{
+    float: left;
+}
+#add_values{
+    margin: 4px 7px;
+}
+#tk_app_cat{
+    min-width: 190px;
+}
+#category_approval_configs_project_id,#category_approval_configs_project_category_id{
+    min-width: 140px;
+    padding: 3px;
+    border: 1px solid;
+}
+#category_approval_configs_project_category_id,#tk_app_cat a{
+    padding-left: 5px;
+}
+#tk_app_cat a{
+    margin-top: 4px;
+}
+
+table#tk_app_list .tk_app_act {
+    width:5%;
+    text-align: center  ;
+}
+table#tk_app_list .tk_app_act a{
+    margin-left: 5px;
+}
+
+table.tk_app_form_tbl th{
+    text-align: left;
+}
+
+#tk_app_pagination{
+    padding: 5px;
+    font-weight: bold;
+    float: right;
+    margin:0 auto;
+}
+
+.app_cat_action, #ticketing_flow p, #ticket_response_area{
+    display: none;
+}
+.tk_app_val input[type='text']{
+    width: 140px;
+    height: 20px;
+    padding: 1px;
+    margin-left: 1px;
+    border: 1px solid;
+}
+#new_ticketing_project_categories .tabular p{
+    padding-left: 140px;
+}
+#new_ticketing_project_categories .box{
+    padding: 25px 6px;
+}
+.approval{display: none}
+
+
+#edit_ticketing_project_categories .tabular p{
+    padding-left: 140px;
+}
+#new_ticketing_project_categories .tabular label ,#edit_ticketing_project_categories .tabular label{ width: 175px!important;}
+#tk_app_list_master{height: 300px;    overflow: auto;    float: left;    width: 100%;}
+
+div#inter_approval_frm label{    margin-left:0!important;float: none}
+div#inter_approval_frm td,div#inter_approval_frm th{border:1px solid;padding: 3px}
+#replace_approve, #betwn_approve, #assignee_approver{display: none}
+#approver{width:100%;}
+#intermediate_approval{display: none}
+#error_override, #error_approver,#error_btwn,#error_replace{border: none!important;color: red;display: none}
+.interrupt{background-color: #ffc69e }
+.interrupt_grid{background-color: #f58220;border:2px sold #f58220}
+.interruptRowColor{background-color: #E9C9AE}
+.interruptTdColor{background-color: #f58220}
+.normal_flow, .approval{text-align: center!important}
+/*.interapproval{display: block!important;}*/

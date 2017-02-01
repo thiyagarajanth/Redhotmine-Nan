@@ -1,0 +1,25 @@
+#,Tracker,Subject,Assignee,Estimated time
+133810,Support,Data table support,Shiva Reddy Srinivasa Reddy,3
+133809,Story,Data-table with Ticket Tag list view server-side call using ajax ,Sabarivignesh Nagaraj,12
+133711,Feature,Add restricted level for new project through auto sync.,Thiyagarajan Thulasi,6
+132704,Feature,list view using Data-tables(Ajax),Sabarivignesh Nagaraj,15
+132703,Feature,Analysis and discussion,Sabarivignesh Nagaraj,3
+132701,Feature,Data-table with Member list view server-side call using ajax ,Sabarivignesh Nagaraj,
+130098,Feature,Need hierarchy configuration page for displaying the Departments ,Shiva Reddy Srinivasa Reddy,3
+129211,Feature,Adding multiple users in a single ticket,Sabarivignesh Nagaraj,12
+126976,Story,Nanba Delegation Primary secondary approval page table design,Thiyagarajan Thulasi,7
+124056,Feature,Analysis and discussion about restricted role auto assign user,Thiyagarajan Thulasi,2
+123075,Feature,Restricted roles auto set assignee while adding new projects from  inia to Nanba ,Thiyagarajan Thulasi,
+121872,Story,Mail content update,Thiyagarajan Thulasi,5
+121868,Story,Setup time limit for delegation,Thiyagarajan Thulasi,4
+121863,Story,List the approver's except Restricted level,Sabarivignesh Nagaraj,5
+121861,Story,Switch page creation,Thiyagarajan Thulasi,
+109357,Feature,Need SLA break hours for Luch time for both response and resolution SLA,Shiva Reddy Srinivasa Reddy,10
+,,,,
+133805,Feature,Timesheet - We need to auto update iNia if time entry is <8 and >7.5,Shiva Reddy Srinivasa Reddy,2
+133769,Feature, iNia Dashboard: Resource allocation Graph changes.,Shiva Reddy Srinivasa Reddy,10
+133762,Support,Production Issue: We unable to getting delete option for sharath cdma project.,Shiva Reddy Srinivasa Reddy,3
+129956,Feature,Developing Defect chart in Project Dashboard Page,Shiva Reddy Srinivasa Reddy,10
+133805,Feature,Timesheet - We need to auto update iNia if time entry is <8 and >7.5,Shiva Reddy Srinivasa Reddy,2
+133769,Feature, iNia Dashboard: Resource allocation Graph changes.,Shiva Reddy Srinivasa Reddy,10
+133762,Support,Production Issue: We unable to getting delete option for sharath cdma project.,Shiva Reddy Srinivasa Reddy,3
